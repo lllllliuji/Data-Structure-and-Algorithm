@@ -9,7 +9,7 @@ int p[N], size[N], d[N];
 void unite(int a, int b) {
     size[find(b)] += size[find(a)];
     p[find(a)] = find(b);
-    d[find(a)] = 0;
+    d[find(a)] = 0; // 视情况而定
 }
 
 int find(int x) {
