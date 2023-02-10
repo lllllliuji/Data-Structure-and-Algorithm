@@ -11,7 +11,6 @@ class Solution {
         long g[n + 1][k + 1];
         memset(f, 0, sizeof f);
         memset(g, 0, sizeof g);
-        f[0][0] = 1;
         for (int i = 0; i <= n; i++) g[i][0] = 1;
         for (int i = 0; i < n; i++) {
             if (i >= minLength - 1 && !is_prime(s[i]) && (i == n - 1 || is_prime(s[i + 1]))) {
