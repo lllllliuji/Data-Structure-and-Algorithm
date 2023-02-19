@@ -77,9 +77,9 @@ int main() {
     int n, m;
     cin >> n >> m;
     for (int i = 1; i <= n; i++) cin >> w[i];
-    
+
     build(1, 1, n);
-    
+
     while (m--) {
         int l, r, d;
         string op;
