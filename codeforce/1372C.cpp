@@ -18,9 +18,12 @@ void solve() {
         } else
             flag = 0;
     }
-    if (cnt == 0) cout << 0 << endl;
-    else if (cnt == 1) cout << 1 << endl;
-    else cout << 2 << endl;
+    if (cnt == 0)
+        cout << 0 << endl;
+    else if (cnt == 1)
+        cout << 1 << endl;
+    else
+        cout << 2 << endl;
 }
 
 int main() {
