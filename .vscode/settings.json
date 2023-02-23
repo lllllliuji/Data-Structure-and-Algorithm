@@ -65,6 +65,10 @@
         "regex": "cpp",
         "optional": "cpp",
         "unordered_set": "cpp",
-        "queue": "cpp"
+        "queue": "cpp",
+        "ranges": "cpp",
+        "span": "cpp",
+        "stacktrace": "cpp",
+        "valarray": "cpp"
     }
 }
