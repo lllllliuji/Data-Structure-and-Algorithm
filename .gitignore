@@ -1,3 +1,4 @@
 *.exe
 */input.txt
 ./exe
+*/output.txt
