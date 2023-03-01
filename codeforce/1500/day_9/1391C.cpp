@@ -1,6 +1,4 @@
 #include <algorithm>
-#include <functional>
-// #include <iomanip>
 #include <iostream>
 #include <numeric>
 #include <queue>
@@ -11,7 +9,24 @@
 
 using namespace std;
 
-void solve() {}
+const int MOD = 1e9 + 7;
+
+void solve() {
+    int n;
+    cin >> n;
+    long long ans = 1;
+    for (int i = 1; i <= n; ++i) {
+        ans *= i;
+        ans %= MOD;
+    }
+    long long temp = 1;
+    for (int i = 0; i < n - 1; ++i) {
+        temp *= 2;
+        temp %= MOD;
+    }
+    ans = (ans - temp + MOD) % MOD;
+    cout << ans << endl;
+}
 
 int main() {
 #ifndef ONLINE_JUDGE
@@ -20,9 +35,8 @@ int main() {
 #endif
     cin.tie(0);
     ios::sync_with_stdio(0);
-    // cout << setprecision(10) << fixed;
-    int t;
-    cin >> t;
+    int t = 1;
+    // cin >> t;
     while (t--) {
         solve();
     }

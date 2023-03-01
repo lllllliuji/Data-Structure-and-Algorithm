@@ -19,7 +19,10 @@
 		"prefix": "START", 
 		"body": [
 			"#include <algorithm>",
+			"#include <functional>",
+			"// #include <iomanip>",
 			"#include <iostream>",
+			"#include <numeric>",
 			"#include <queue>",
 			"#include <stack>",
 			"#include <unordered_map>",
@@ -39,6 +42,7 @@
 			"#endif",
 			"    cin.tie(0);",
     		"    ios::sync_with_stdio(0);",
+			"    // cout << setprecision(10) << fixed;",
     		"    int t;",
     		"    cin >> t;",
     		"    while (t--) {",
