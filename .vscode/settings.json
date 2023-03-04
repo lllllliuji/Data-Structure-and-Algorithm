@@ -69,6 +69,7 @@
         "ranges": "cpp",
         "span": "cpp",
         "stacktrace": "cpp",
-        "valarray": "cpp"
+        "valarray": "cpp",
+        "xstring": "cpp"
     }
 }
