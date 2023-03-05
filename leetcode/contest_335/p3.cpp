@@ -40,6 +40,7 @@ public:
                 return r;
             } 
         }
+        if (vec.size() == 0 && n > 1) return 0;
         return -1;
     }
 };
