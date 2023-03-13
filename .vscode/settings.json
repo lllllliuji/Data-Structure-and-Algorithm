@@ -70,6 +70,7 @@
         "span": "cpp",
         "stacktrace": "cpp",
         "valarray": "cpp",
-        "xstring": "cpp"
+        "xstring": "cpp",
+        "xstddef": "cpp"
     }
 }
