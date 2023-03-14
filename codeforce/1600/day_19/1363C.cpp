@@ -15,25 +15,23 @@
 using namespace std;
 
 void solve() {
-    int n;
-    cin >> n;
-    using E = pair<long long, long long>;
-    vector<E> arr;
-    for (int i = 0; i < n; i++) {
-        long long a, b;
+    int n, x;
+    cin >> n >> x;
+    vector<vector<int>> g(n + 1, vector<int>());
+    for (int i = 0; i < n - 1; i++) {
+        int a, b;
         cin >> a >> b;
-        arr.push_back({a, b});
+        g[a].push_back(b);
+        g[b].push_back(a);
     }
-    vector<long long> c(n);
-    for (int i = 0; i < n; i++) {
-        c[i] = max(0LL, arr[i].first - arr[(i + n - 1) % n].second);
+    if (g[x].size() <= 1) {
+        cout << "Ayush" << endl;
+        return;
     }
-    long long sum = accumulate(c.begin(), c.end(), 0LL);
-    long long ans = 1e18;
-    for (int i = 0; i < n; i++) {
-        ans = min(ans, sum - c[i] + arr[i].first);
-    }
-    cout << ans << endl;
+    if (n % 2 == 1)
+        cout << "Ashish" << endl;
+    else
+        cout << "Ayush" << endl;
 }
 
 int main() {
