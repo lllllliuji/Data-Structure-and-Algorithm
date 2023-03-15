@@ -15,7 +15,16 @@
 using namespace std;
 
 void solve() {
-    
+    vector<int> apples(10);
+    for (int i = 0; i < 10; i++) cin >> apples[i];
+    int x;
+    cin >> x;
+    x += 30;
+    int ans = 0;
+    for (int u : apples) {
+        if (u <= x) ans ++;
+    }
+    cout << ans << endl;
 }
 
 int main() {

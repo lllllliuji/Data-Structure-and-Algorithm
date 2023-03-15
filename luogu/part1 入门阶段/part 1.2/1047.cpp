@@ -15,7 +15,24 @@
 using namespace std;
 
 void solve() {
-    
+    int l, m;
+    cin >> l >> m;
+    vector<pair<int, int>> arr;
+    for (int i = 0; i < m; i++) {
+        int a, b;
+        cin >> a >> b;
+        arr.push_back({a, b});
+    }
+    sort(arr.begin(), arr.end());
+    for (int i = 0; i < m; i++) {
+        int left = arr[i].first, right = arr[i].second;
+        while (i + 1 < m && right >= arr[i + 1].first) {
+            right = max(right, arr[i + 1].second);
+            i++;
+        }
+        l -= (right - left + 1);
+    }
+    cout << l + 1 << endl;
 }
 
 int main() {

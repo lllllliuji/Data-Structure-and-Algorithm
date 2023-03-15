@@ -15,7 +15,28 @@
 using namespace std;
 
 void solve() {
-    
+    int n, m, k;
+    cin >> n >> m >> k;
+    vector<vector<int>> a(n);
+    vector<int> p(n);
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < m; j++) {
+            int x;
+            cin >> x;
+            a[i].push_back(x);
+        }
+    }
+    for (int u = 1; u <= k; u++) {
+        unordered_set<int> c;
+        for (int i = 0; i < n; i++) {
+            if (p[i] < m && a[i][p[i]] == u) {
+                c.insert(p[i]);
+                p[i]++;
+            }
+        }
+        cout << c.size() << " ";
+    }
+    cout << endl;
 }
 
 int main() {

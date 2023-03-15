@@ -15,7 +15,17 @@
 using namespace std;
 
 void solve() {
-    
+    vector<int> a;
+    int x;
+    while (true) {
+        cin >> x;
+        if (x == 0) break;
+        a.push_back(x);
+    }
+    for (int i = a.size() - 1; i >= 0; i--) {
+        cout << a[i] << " ";
+    }
+    cout << endl;
 }
 
 int main() {

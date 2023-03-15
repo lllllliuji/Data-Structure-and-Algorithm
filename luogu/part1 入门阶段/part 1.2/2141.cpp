@@ -15,7 +15,26 @@
 using namespace std;
 
 void solve() {
-    
+    int n;
+    vector<int> arr;
+    unordered_map<int, bool> exist;
+    cin >> n;
+    for (int i = 0; i < n; i++) {
+        int x;
+        cin >> x;
+        arr.push_back(x);
+        exist[x] = true;
+    }
+    int ans = 0;
+    for (int i = 0; i < n; i++) {
+        for (int j = i + 1; j < n; j++) {
+            if (exist[arr[i] + arr[j]]) {
+                ans ++;
+                exist[arr[i] + arr[j]] = false;
+            }
+        }
+    }
+    cout << ans << endl;
 }
 
 int main() {
