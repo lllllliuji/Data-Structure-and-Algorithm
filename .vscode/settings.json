@@ -71,6 +71,7 @@
         "stacktrace": "cpp",
         "valarray": "cpp",
         "xstring": "cpp",
-        "xstddef": "cpp"
+        "xstddef": "cpp",
+        "xiosbase": "cpp"
     }
 }

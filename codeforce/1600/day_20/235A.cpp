@@ -15,7 +15,16 @@
 using namespace std;
 
 void solve() {
-    
+    long long n;
+    cin >> n;
+    if (n < 3)
+        cout << n << endl;
+    else if (n % 2)
+        cout << n * (n - 1) * (n - 2) << endl;
+    else if (n % 3 == 0)
+        cout << (n - 1) * (n - 2) * (n - 3) << endl;
+    else
+        cout << n * (n - 1) * (n - 3) << endl;
 }
 
 int main() {
@@ -26,8 +35,8 @@ int main() {
     cin.tie(0);
     ios::sync_with_stdio(0);
     // cout << setprecision(10) << fixed;
-    int t;
-    cin >> t;
+    int t = 1;
+    // cin >> t;
     while (t--) {
         solve();
     }

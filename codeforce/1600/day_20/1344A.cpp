@@ -15,7 +15,21 @@
 using namespace std;
 
 void solve() {
-    
+    int n;
+    map<int, int> mp;
+    cin >> n;
+    vector<int> a(n);
+    for (int i = 0; i < n; i++) {
+        cin >> a[i];
+        mp[(((a[i] + i) % n) + n) % n]++;
+    }
+    for (auto x : mp) {
+        if (x.second >= 2) {
+            cout << "NO" << endl;
+            return;
+        }
+    }
+    cout << "YES" << endl;
 }
 
 int main() {
