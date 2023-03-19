@@ -72,6 +72,10 @@
         "valarray": "cpp",
         "xstring": "cpp",
         "xstddef": "cpp",
-        "xiosbase": "cpp"
+        "xiosbase": "cpp",
+        "stack": "cpp",
+        "xhash": "cpp",
+        "xtree": "cpp",
+        "xutility": "cpp"
     }
 }
