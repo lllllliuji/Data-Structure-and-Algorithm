@@ -6,7 +6,6 @@
 #include <numeric>
 #include <queue>
 #include <set>
-#include <sstream>
 #include <stack>
 #include <string>
 #include <unordered_map>
@@ -15,18 +14,19 @@
 
 using namespace std;
 
+int month[13] = {0, 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
 void solve() {
-    int n, k;
-    cin >> n >> k;
-    vector<int> f(n + 1);
-    f[0] = 1;
-    for (int i = 1; i <= n; i++) {
-        for (int j = 1; j <= k; j++) {
-            if (i >= j) f[i] += f[i - j];
+    int start, end;
+    cin >> start >> end;
+    int ans = 0;
+    for (int i = 1; i <= 12; i++) {
+        for (int j = 1; j <= month[i]; j++) {
+            int x = (j % 10) * 1000 + (j / 10) * 100 + (i % 10) * 10 + (i / 10);
+            int y = x * 10000 + i * 100 + j;
+            if (y >= start && y <= end) ans++;
         }
-        f[i] %= 100003;
     }
-    cout << f[n] << endl;
+    cout << ans << endl;
 }
 
 int main() {

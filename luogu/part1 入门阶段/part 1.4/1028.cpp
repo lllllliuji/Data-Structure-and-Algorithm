@@ -16,17 +16,19 @@
 using namespace std;
 
 void solve() {
-    int n, k;
-    cin >> n >> k;
+    int n;
+    cin >> n;
     vector<int> f(n + 1);
-    f[0] = 1;
-    for (int i = 1; i <= n; i++) {
-        for (int j = 1; j <= k; j++) {
-            if (i >= j) f[i] += f[i - j];
+    int ans = 0;
+    function<int(int)> dfs = [&](int u) {
+        if (f[u] != 0) return f[u];
+        int cnt = 0;
+        for (int i = 1; i <= u / 2; i++) {
+            cnt += dfs(i);
         }
-        f[i] %= 100003;
-    }
-    cout << f[n] << endl;
+        return f[u] = cnt + 1;
+    };
+    cout << dfs(n) << endl;
 }
 
 int main() {

@@ -16,17 +16,15 @@
 using namespace std;
 
 void solve() {
-    int n, k;
-    cin >> n >> k;
-    vector<int> f(n + 1);
-    f[0] = 1;
-    for (int i = 1; i <= n; i++) {
-        for (int j = 1; j <= k; j++) {
-            if (i >= j) f[i] += f[i - j];
-        }
-        f[i] %= 100003;
+    int n;
+    cin >> n;
+    vector<string> arr(n);
+    for (int i = 0; i < n; i++) {
+        cin >> arr[i];
     }
-    cout << f[n] << endl;
+    sort(arr.begin(), arr.end(), [](const auto& a, const auto& b) { return a + b > b + a; });
+    for (int i = 0; i < n; i++) cout << arr[i];
+    cout << endl;
 }
 
 int main() {

@@ -15,18 +15,33 @@
 
 using namespace std;
 
+bool check(int x) {
+    for (int i = 2; i <= x / i; i++) {
+        if (x % i == 0) return false;
+    }
+    return true;
+}
+
 void solve() {
     int n, k;
     cin >> n >> k;
-    vector<int> f(n + 1);
-    f[0] = 1;
-    for (int i = 1; i <= n; i++) {
-        for (int j = 1; j <= k; j++) {
-            if (i >= j) f[i] += f[i - j];
+    vector<int> arr(n);
+    for (int i = 0; i < n; i++) cin >> arr[i];
+    int cnt = 0;
+    function<void(int, int, int)> dfs = [&](int u, int c, int sum) {
+        if (c == 0) {
+            if (check(sum)) cnt++;
+            return;
         }
-        f[i] %= 100003;
-    }
-    cout << f[n] << endl;
+        if (u >= n) {
+            return;
+        }
+        // cout << u << " " << c << " " << sum << endl;
+        dfs(u + 1, c, sum);
+        dfs(u + 1, c - 1, sum + arr[u]);
+    };
+    dfs(0, k, 0);
+    cout << cnt << endl;
 }
 
 int main() {
