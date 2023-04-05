@@ -14,9 +14,24 @@
 #include <vector>
 
 using namespace std;
-
+int ans;
+void dfs(int v, int cnt, int start) {
+    if (cnt == 0) {
+        if (v == 0) ans++;
+        return;
+    }
+    if (v < start) {
+        return;
+    }
+    for (int i = start; i <= v / cnt; i++) {
+        dfs(v - i, cnt - 1, i);
+    }
+}
 void solve() {
-    
+    int n, k;
+    cin >> n >> k;
+    dfs(n, k, 1);
+    cout << ans << endl;
 }
 
 int main() {

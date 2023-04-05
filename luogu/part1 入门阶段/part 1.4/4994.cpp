@@ -14,9 +14,19 @@
 #include <vector>
 
 using namespace std;
+long long fp[10'000'000];
 
 void solve() {
-    
+    int m;
+    cin >> m;
+    function<long long(long long)> find = [&](long long i) -> long long {
+        if (fp[i]) return fp[i];
+        if (i == 1 || i == 2) return fp[i] = 1 % m;
+        return fp[i] = (fp[i - 1] + fp[i - 2]) % m;
+    };
+    int i = 1;
+    while (find(i) != 0 || find(i + 1) != 1) i++;
+    cout << i << endl;
 }
 
 int main() {
