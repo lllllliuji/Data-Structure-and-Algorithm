@@ -16,7 +16,17 @@
 using namespace std;
 
 void solve() {
-    
+    int a, b;
+    cin >> a >> b;
+    if (a == 3 || a == 6 || a == 9) {
+        cout << "No" << endl;
+        return;
+    }
+    if (a == b - 1) {
+        cout << "Yes" << endl;
+        return;
+    }
+    cout << "No" << endl;
 }
 
 int main() {
