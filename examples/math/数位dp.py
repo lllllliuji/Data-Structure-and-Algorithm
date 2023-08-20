@@ -7,8 +7,6 @@ def numberOfBeautifulIntegers(self, low: int, high: int, k: int) -> int:
             m = len(s)
             @cache  # 记忆化搜索
             def f(i: int, v: int, total: int, is_limit: bool, is_num: bool) -> int:
-                if total > m // 2 or total < -m // 2:
-                    return 0
                 if i == len(s):
                     return int(is_num) and total == 0 and v % k == 0  # is_num 为 True 表示得到了一个合法数字
                 res = 0
