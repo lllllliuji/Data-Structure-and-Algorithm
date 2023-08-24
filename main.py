@@ -8,3 +8,5 @@ line = input()
 a, b = line.split(" ")
 print(a)
 print(b)
+for i in range(3):
+    print(i)
