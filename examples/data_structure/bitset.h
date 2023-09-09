@@ -1,5 +1,7 @@
+#include <assert.h>
+
 #include <bit>
-namespace OY {
+#include <cstring>
 enum _BITBLOCK_STATE { BITSET_DEFAULT = 0, BITSET_FLIPPED = 1, BITSET_ZERO = 2, BITSET_ONE = 3 };
 template <int _Depth = 6>
 struct _BitBlock {
@@ -432,4 +434,3 @@ class Bitset {
         return res;
     }
 };
-}  // namespace OY
