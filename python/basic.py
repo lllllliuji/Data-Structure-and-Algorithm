@@ -51,6 +51,7 @@ if 1:
         from operator import add, iand, ior, itemgetter, mul, xor
         from string import ascii_lowercase, ascii_uppercase, ascii_letters
         from typing import *
+        from sortedcontainers import SortedList
         BUFSIZE = 4096
 
     if output_together:
@@ -151,6 +152,8 @@ if 1:
 
 def solve():
     print('hello')
+    sl = SortedList([1, 2, 3, 4, 4, 5, 6, 6, 7, 10, 10])
+    print(sl.bisect_left(4), sl.bisect_right(4))
     pass
 
 t = 1
